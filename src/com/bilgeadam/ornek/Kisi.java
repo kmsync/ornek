@@ -39,6 +39,8 @@ public class Kisi {
         this.maas = maas;
     }
 
+    // constructer overloading
+    // obje oluşrururken hangi constructer uyuyorsa, onu çalıştırıyor
     public Kisi() {
     }
 
