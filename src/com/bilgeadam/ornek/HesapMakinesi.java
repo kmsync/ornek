@@ -33,6 +33,9 @@ public class HesapMakinesi {
         System.out.println(hm.carp(7, 9));
         System.out.println(hm.bol(7, 9));
 
+        int sonuc = hm.topla(9,14);
+
+        System.out.println("Sonuç: " + sonuc);
     }
 
 }
