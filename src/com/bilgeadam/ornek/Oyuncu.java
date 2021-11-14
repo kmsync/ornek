@@ -13,6 +13,7 @@ public class Oyuncu {
     // her obje değişkenlerin ilk değeriyle başlar.
     // örnek, int ise her obje için bağımsız olarak sıfır değeriyle başlar.
     // bir objenin değişkende yaptığı değişliği diğerleri görmez.
+
     private static int sayac;
 
     public Oyuncu() {
