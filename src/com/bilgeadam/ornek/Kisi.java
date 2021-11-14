@@ -2,10 +2,10 @@ package com.bilgeadam.ornek;
 
 public class Kisi {
 
-   private int no;
-   private String ad;
-   private String soyad;
-   private double maas;
+    private int no;
+    private String ad;
+    private String soyad;
+    private double maas;
 
     public int getNo() {
         return no;
@@ -49,26 +49,26 @@ public class Kisi {
         this.maas = maas;
     }
 
-    public double yillikMaasGetir(){
+    public double yillikMaasGetir() {
 
         double yillikMaas = this.maas * 12;
 
         return yillikMaas;
     }
 
-    public String adSoyadGetir(){
-        return this.ad +" "+this.soyad;
+    public String adSoyadGetir() {
+        return this.ad + " " + this.soyad;
     }
 
     @Override
     public String toString() {
         return
                 "No: " + no + "\n" +
-                "Ad: " + ad + "\n" +
-                "Soyad: " + soyad + "\n" +
-                "Maas: " + maas + "\n" +
-                "Yıllık Maaş: " + yillikMaasGetir() + "\n" +
-                "Ad Soyad: " + adSoyadGetir() + "\n";
+                        "Ad: " + ad + "\n" +
+                        "Soyad: " + soyad + "\n" +
+                        "Maas: " + maas + "\n" +
+                        "Yıllık Maaş: " + yillikMaasGetir() + "\n" +
+                        "Ad Soyad: " + adSoyadGetir() + "\n";
     }
 
     //    public double yillik (int maas, int yil) {
@@ -81,5 +81,5 @@ public class Kisi {
     //    Kisi k = new Kisi();
     //
     //
-   // }
+    // }
 }
