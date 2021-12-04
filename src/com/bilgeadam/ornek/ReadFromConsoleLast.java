@@ -7,73 +7,58 @@ public class ReadFromConsoleLast {
 
     // Class değişkeni olduğu için ilk değer vermemize gerek yok.
     // Method değişkeni olsaydı yas için = 0 isim için = "" olarak ilk değerini vermemiz gerekirdi.
-    String isim;
-    int yas;
+    static String isim;
+    static int yas;
 
     Scanner sc = new Scanner(System.in);
 
-    public String isimSor()
-    {
+    public String isimSor() {
         String ad = "";
-        System.out.println("İsminizi Giriniz:");
+        System.out.print("İsminizi Giriniz: ");
         ad = sc.nextLine();
 
-        return  ad;
+        return ad;
     }
 
-    public int yasSor()
-    {
-        int localYas = 0;
-        System.out.println("Yaşınızı Giriniz:");
-        localYas = sc.nextInt();
+    public int yasSor() {
+        try {
+            int localYas = 0;
 
-        return localYas;
+            // Kullanıcıdan sayısal veri isterken nextLine kullanıp,
+            // daha sonra Integer.parseInt ile int'e çevirmek hata alma olasılığımızı azaltır.
+            System.out.print("Yaşınızı Giriniz: ");
+            localYas = Integer.parseInt(sc.nextLine());
+
+            return localYas;
+        } catch (NumberFormatException e) {
+            System.err.println("HATA: Yaş alanına sayı girmek zorundasınız!");
+            System.out.println();
+            return -99;
+        }
+
     }
 
-    public void sonucYazdir()
-    {
+    public void sonucYazdir() {
         if (yas <= 35)
             System.out.println("Yolun 1. yarısındasın " + isim);
 
         else
 
-        System.out.println("Yolun 2. yarısındasın " + isim);
+            System.out.println("Yolun 2. yarısındasın " + isim);
     }
 
     public static void main(String[] args) {
 
         ReadFromConsoleLast son = new ReadFromConsoleLast();
 
-        son.isimSor();
-        son.yasSor();
-        son.sonucYazdir();
+        isim = son.isimSor();
+        yas = son.yasSor();
 
-//        int yas = 0;
-//
-//        // Scanner objesiyle konsoldan veri okuyabiliyoruz.
-//        Scanner sc = new Scanner(System.in);
-//
-//        System.out.print("İsminizi Giriniz: ");
-//
-//        String isim = sc.nextLine();
-//
-//        System.out.print("Yaşınızı Giriniz: ");
-//
-//        try {
-//            yas = sc.nextInt();
-//        } catch (InputMismatchException e) {
-//            System.err.println("HATA!! Yaş alanına tam sayı girmek zorundasınız!");
-//            System.exit(-1);
-//        }
-//
-//        //int yas = (int)Double.parseDouble(sc.nextLine());
-//
-//
-//        if (yas <= 35) {
-//            System.out.println(yas + " yaşında yolun 1. yarısındasın " + isim);
-//        } else {
-//            System.out.println(yas + " yaşında yolun 2. yarısındasın " + isim);
-//        }
+        while (yas < 0) {
+            yas = son.yasSor();
+        }
+
+        son.sonucYazdir();
 
     }
 }
