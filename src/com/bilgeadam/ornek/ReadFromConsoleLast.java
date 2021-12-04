@@ -12,16 +12,22 @@ public class ReadFromConsoleLast {
 
     Scanner sc = new Scanner(System.in);
 
-    public void isimSor()
+    public String isimSor()
     {
+        String ad = "";
         System.out.println("İsminizi Giriniz:");
-        isim = sc.nextLine();
+        ad = sc.nextLine();
+
+        return  ad;
     }
 
-    public void yasSor()
+    public int yasSor()
     {
+        int localYas = 0;
         System.out.println("Yaşınızı Giriniz:");
-        yas = sc.nextInt();
+        localYas = sc.nextInt();
+
+        return localYas;
     }
 
     public void sonucYazdir()
